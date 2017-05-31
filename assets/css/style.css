@@ -1,0 +1,18 @@
+/*font-family: 'Hind Vadodara', sans-serif;
+font-family: 'IM Fell English', serif;*/
+
+h1 {
+	font-family: 'IM Fell English', serif;
+	letter-spacing: 2px;
+	font-size: 50px;
+	text-align: center;
+}
+
+h3 {
+	margin: 10px 0px 10px 0px;
+}
+
+.row {
+	padding: 20px;
+	border-bottom: #333 solid 2px;
+}
