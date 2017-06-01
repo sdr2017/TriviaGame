@@ -18,19 +18,79 @@ $(document).ready(function() {
 			//trivia[0]
 			question: "What do you call a group of Owls?",
 			answer: "a parliament",
-			options: ["a congress", "a ministry", "a group"];
+			options: ["a congress", "a ministry", "a group"],
+			asked: 0,
 	},{		//trivia[1]
 			question: "What do you call a group of Penguins?",
 			answer: "All of the Above",
-			option1: "a colony",
-			option2: "a muster",
-			option3: "a parcel",
+			options: ["a colony", "a muster", "a parcel"],
+			asked: 0,
 	},{		//trivia[2]
 			question: "What do you call a group of Sparrows?",
 			answer: "a host",
-			option1: "a cluster",
-			option2: "an army",
-			option3: "a legion",
+			options: ["a cluster", "an army", "a legion"],
+			asked: 0,
+	},{		//trivia[3]
+			question: "What do you call a group of Flamingos?",
+			answer: "a stand",
+			options: ["a garden", "crowd", "school"],
+			asked: 0,
+	},{		//trivia[4]
+			question: "What do you call a group of Grasshoppers?",
+			answer: "a cloud",
+			options: ["a ninja", "a swarm", "a cricket"],
+			asked: 0,
+	},{		//trivia[5]
+			question: "About how many species are of snakes are there?",
+			answer: "3000",
+			options: ["100", "300", "1000"],
+			asked: 0,
+	},{		//trivia[6]
+			question: "What is considered to be the smartest breed of dog?",
+			answer: "Border Collie",
+			options: ["Labrador Retreiver", "Clifford", "Pit Bull"],
+			asked: 0,
+	},{		//trivia[7]
+			question: "What method do bats use for navigation?",
+			answer: "Echolocation",
+			options: ["GPS", "Wingardium Leviosa", "Maps"],
+			asked: 0,
+	},{		//trivia[8]
+			question: "Which mammal lays eggs?",
+			answer: "Platypus",
+			options: ["Kangaroo", "Dolphin", "Chicken"],
+			asked: 0,
+	},{		//trivia[9]
+			question: "In what year did the passenger pigeon go extinct?",
+			answer: "1914",
+			options: ["1080", "1492", "2012"],
+			asked: 0,
+	},{		//trivia[10]
+			question: "What two species breed to create a mule?",
+			answer: "Donkey and Horse",
+			options: ["Zebra and Horse", "Mule and Mule", "Cow and Horse"],
+			asked: 0,
+	},{		//trivia[11]
+			question: "What animal was considered sacred in Ancient Egypt?",
+			answer: "Cat",
+			options: ["Mouse", "Turtle", "Lady bug"],
+			asked: 0,
+	},{		//trivia[12]
+			question: "In what region do Narwhals live?",
+			answer: "Arctic",
+			options: ["South Pacific", "South Atlantic", "Saharan"],
+			asked: 0,
+	},{		//trivia[13]
+			question: "What type of bird did Darwin observe, resulting in his Theory of Evolution?",
+			answer: "Finches",
+			options: ["Eagles", "Falcons", "Ravens"],
+			asked: 0,
+	},{		//trivia[14]
+			question: "Which sea animal has three hearts?",
+			answer: "Cuttlefish",
+			options: ["Starfish", "Sharks", "Dolphin"],
+			asked: 0,
+
 	}]
 
 	var triviaRandom = trivia[Math.floor(Math.random() * trivia.length)];
