@@ -14,6 +14,7 @@
 //I need to print that information on a new HTML page
 //After XX seconds, I need to go back to the gamepage and reset the game
 $(document).ready(function() {
+
 	var trivia = [{
 			//trivia[0]
 			question: "What do you call a group of Owls?",
@@ -90,13 +91,23 @@ $(document).ready(function() {
 			answer: "Cuttlefish",
 			options: ["Starfish", "Sharks", "Dolphin"],
 			asked: 0,
+	}];
 
-	}]
+	var totalQuestions = $('.question').length; //number of questions in the HTML
+	var triviaToPrint = [];
+	for (var i = 0; i < totalQuestions; i++) {
+		var triviaRandom = trivia[Math.floor(Math.random() * trivia.length)];
+		triviaToPrint.push(triviaRandom);
+		console.log(triviaToPrint);
 
-	var triviaRandom = trivia[Math.floor(Math.random() * trivia.length)];
-	console.log(triviaRandom);
 
-	$("#question1").html(trivia[0].question);
+	 }
+
+	//$("#question1").html(trivia[0].question);
+
+
+
+	
 
 
 
