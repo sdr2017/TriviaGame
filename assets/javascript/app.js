@@ -94,16 +94,19 @@ $(document).ready(function() {
 	}];
 
 	var totalQuestions = $('.question').length; //number of questions in the HTML
-	var triviaToPrint = [];
+	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
 	for (var i = 0; i < totalQuestions; i++) {
 		var triviaRandom = trivia[Math.floor(Math.random() * trivia.length)];
 		triviaToPrint.push(triviaRandom);
-		console.log(triviaToPrint);
-
-
 	 }
+	 		console.log(triviaToPrint);
+	 	$("#1").html(triviaToPrint[0].question);
+		$("#2").html(triviaToPrint[1].question);
+		$("#3").html(triviaToPrint[2].question);
+		$("#4").html(triviaToPrint[3].question);
+		$("#5").html(triviaToPrint[4].question);
 
-	//$("#question1").html(trivia[0].question);
+
 
 
 
