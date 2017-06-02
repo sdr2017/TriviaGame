@@ -103,7 +103,7 @@ $(document).ready(function() {
 
     function minus() {
       number--;
-      $("#show-number").html("<h3>" + number + "</h3>");
+      $("#viewNumber").html("<h2>" + number + "</h2>");
       if (number === 0) {
         stop();
       }

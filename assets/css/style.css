@@ -21,3 +21,17 @@ h3 {
 	margin:auto; 
 	display:block;
 }
+
+#viewNumber {
+	height: 80px;
+	width: 80px;
+	border-radius: 80px;
+	position: fixed;
+	bottom: 10%;
+	right: 10%;
+	background: #333;
+	color: #fff;
+	text-align: center;
+	line-height: 0px;
+}
+}
