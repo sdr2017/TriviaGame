@@ -108,7 +108,7 @@ $(document).ready(function() {
 	}];
 
 
-
+	//countdown info
 	var number = 30;
     var countdown;
 
@@ -123,13 +123,17 @@ $(document).ready(function() {
         stop();
       }
     }
+
     function stop() {
       clearInterval(coutdown);
     }
 
-    $("#start").on("click", show);
-    $("#start").on("click", start);
-    $("#start").on("click", buttonHide);
+    $("#start").on("click", function() {
+    	show();
+    	start();
+    	buttonHide();
+    });
+
     $("#done").on("click", stop);
 
 
@@ -137,18 +141,21 @@ $(document).ready(function() {
 
 	var totalQuestions = $('.question').length; //number of questions in the HTML
 	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
+	var displayQuestions = ["#1", "#2", "#3", "#4", "#5"];
 	
 	for (var i = 0; i < totalQuestions; i++) {
 		var triviaRandom = trivia[Math.floor(Math.random() * trivia.length)];//randomly selecting questions(amount determined in HTML)
 		triviaToPrint.push(triviaRandom);//pushing randomly selected questions to array
-		//triviaToPrint[i].asked++;
 	 }
+
+	for (var i = 0; i < displayQuestions.length; i++) {
 	 	//printing random questions to HTML
-	 	$("#1").html(triviaToPrint[0].question);
-		$("#2").html(triviaToPrint[1].question);
-		$("#3").html(triviaToPrint[2].question);
-		$("#4").html(triviaToPrint[3].question);
-		$("#5").html(triviaToPrint[4].question);
+	 	$(displayQuestions[i]).html(triviaToPrint[i].question);
+		console.log(displayQuestions[i]);
+		console.log(triviaToPrint[i]);
+		}
+		
+
 
 	//for (var i = 0; i < )
 
@@ -177,7 +184,6 @@ $(document).ready(function() {
 		$(".question5c").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[4].options[1]);
 		$(".question5d").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[4].options[0]);
 
-		console.log(triviaToPrint[0].options);
 
 
 
