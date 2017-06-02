@@ -3,6 +3,7 @@
 //I need to specify the correct answer in the HTML value? (give it a value of true?)
 
 //I need set a countdown timer
+	//timer starts at 30, decreases by 1 every second
 
 //I need user to select only one answer per question
 
@@ -92,6 +93,28 @@ $(document).ready(function() {
 			options: ["Starfish", "Sharks", "Dolphin"],
 			asked: false,
 	}];
+
+	var number = 30;
+    var countdown;
+
+    function start() {
+      coutdown = setInterval(minus, 1000);
+    }
+
+    function minus() {
+      number--;
+      $("#show-number").html("<h3>" + number + "</h3>");
+      if (number === 0) {
+        stop();
+      }
+    }
+    function stop() {
+      clearInterval(coutdown);
+    }
+
+    $("#start").on("click", start);
+    $("#done").on("click", stop);
+
 
 	var totalQuestions = $('.question').length; //number of questions in the HTML
 	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
