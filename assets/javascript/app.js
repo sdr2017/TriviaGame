@@ -16,6 +16,19 @@
 //After XX seconds, I need to go back to the gamepage and reset the game
 $(document).ready(function() {
 
+	function hide() {
+		$("#hideThis").hide();
+	}
+	hide()
+
+	function show() {
+		$("#hideThis").show();
+	}
+
+	function buttonHide() {
+		$("#hideButton").hide();
+	}
+
 	var trivia = [{
 			//trivia[0]
 			question: "What do you call a group of Owls?",
@@ -94,6 +107,8 @@ $(document).ready(function() {
 			asked: false,
 	}];
 
+
+
 	var number = 30;
     var countdown;
 
@@ -112,8 +127,12 @@ $(document).ready(function() {
       clearInterval(coutdown);
     }
 
+    $("#start").on("click", show);
     $("#start").on("click", start);
+    $("#start").on("click", buttonHide);
     $("#done").on("click", stop);
+
+
 
 
 	var totalQuestions = $('.question').length; //number of questions in the HTML
