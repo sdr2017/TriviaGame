@@ -125,14 +125,14 @@ $(document).ready(function() {
     	}
 	//start button:
     $("#start").on("click", function() {
-    	reset();
+    	resetGame();
     	show(); //showing questions on click
     	start(); //starting countdown
     	buttonHide(); //disappearing on click
     	});
 
     
-    var resultTime = 10;
+    var resultTime = 5;
      var resultCountdown;
      function resultStart() {
      	resultCountdown = setInterval(subtract, 1000);
@@ -140,9 +140,10 @@ $(document).ready(function() {
      function subtract() {
      	resultTime--;
      	if (resultTime === 0) {
-     		reset();
+     		resetGame();
      		show();
      		stop();
+     		number = 30;
      		start();
      	}
      	}
@@ -153,10 +154,12 @@ $(document).ready(function() {
      	stop();
      	hide();
      	alert("show game results here");
+     	nope()
+     	resultTime = 5;
      	resultStart();
      	});
 
-function reset() {
+function resetGame() {
 	var totalQuestions = $('.question').length; //number of questions in the HTML
 	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
 	//var displayQuestions = ["#1", "#2", "#3", "#4", "#5"];
