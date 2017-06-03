@@ -16,16 +16,15 @@
 //After XX seconds, I need to go back to the gamepage and reset the game
 $(document).ready(function() {
 
-	function hide() {
+	function hide() { //for hiding the questions before clicking "start"
 		$("#hideThis").hide();
 	}
 	hide()
 
-	function show() {
+	function show() { //for showing the questions after clicking "start"
 		$("#hideThis").show();
 	}
-
-	function buttonHide() {
+	function buttonHide() { //for hiding the start button after it's clicked
 		$("#hideButton").hide();
 	}
 
@@ -111,80 +110,117 @@ $(document).ready(function() {
 	//countdown info
 	var number = 30;
     var countdown;
-
-    function start() {
-      coutdown = setInterval(minus, 1000);
-    }
-
-    function minus() {
-      number--;
-      $("#viewNumber").html("<h2>" + number + "</h2>");
-      if (number === 0) {
+	function start() {
+    	coutdown = setInterval(minus, 1000);
+    	}
+	function minus() {
+    	number--;
+    	$("#viewNumber").html("<h2>" + number + "</h2>");
+    	if (number === 0) {
         stop();
-      }
-    }
-
-    function stop() {
-      clearInterval(coutdown);
-    }
-
+      	}
+    	}
+	function stop() {
+    	clearInterval(coutdown);
+    	}
+	//start button:
     $("#start").on("click", function() {
-    	show();
-    	start();
-    	buttonHide();
-    });
+    	show(); //showing questions on click
+    	start(); //starting countdown
+    	buttonHide(); //disappearing on click
+    	});
 
-    $("#done").on("click", stop);
+    
+    var resultTime = 15;
+    var resultCountdown;
+    function resultStart() {
+    	resultCountdown = setInterval(subtract, 1000);
+    	}
+    function subtract() {
+    	resultTime--;
+    	if (resultTime === 0) {
+    		nope();
+    		reset();
+    	}
+    	}
+    function nope() {
+    	clearInterval(resultCountdown);
+    	}
+    $("#done").on("click", function(){
+    	hide();
+    	resultStart();
+    	alert("show game results here");
+    	});
 
 
 
 
 	var totalQuestions = $('.question').length; //number of questions in the HTML
 	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
+	//var displayQuestions = ["#1", "#2", "#3", "#4", "#5"];
+	
 	var displayQuestions = ["#1", "#2", "#3", "#4", "#5"];
+	// var	displayOptions = [{
+	// 	one: [".question1a", ".question1b", ".question1c", ".question1d"],
+	// 	two: [".question2a", ".question2b", ".question2c", ".question2d"],
+	// 	three: [".question3a", ".question3b", ".question3c", ".question3d"],
+	// 	four: [".question4a", ".question4b", ".question4c", ".question4d"],
+	// 	five: [".question5a", ".question5b", ".question5c", ".question5d"],
+	// }]
+
+	// function options() {
+// 	var totalOptions0 = [triviaToPrint[0].options + "," + triviaToPrint[0].answer];
+// 	var splitOptions0 = totalOptions0.split(",");
+// 	var totalOptions1 = [(triviaToPrint[1].options + triviaToPrint[1].answer)];
+// 	var totalOptions2 = [(triviaToPrint[2].options + triviaToPrint[2].answer)];
+// 	var totalOptions3 = [(triviaToPrint[3].options + triviaToPrint[3].answer)];
+// 	var totalOptions4 = [(triviaToPrint[4].options + triviaToPrint[4].answer)];
+// 	console.log(splitOptions0);
+// }
+// options();
 	
 	for (var i = 0; i < totalQuestions; i++) {
 		var triviaRandom = trivia[Math.floor(Math.random() * trivia.length)];//randomly selecting questions(amount determined in HTML)
 		triviaToPrint.push(triviaRandom);//pushing randomly selected questions to array
 	 }
 
-	for (var i = 0; i < displayQuestions.length; i++) {
-	 	//printing random questions to HTML
+	//printing random questions to HTML
+	for (var i = 0; i <displayQuestions.length; i++) {
 	 	$(displayQuestions[i]).html(triviaToPrint[i].question);
-		console.log(displayQuestions[i]);
-		console.log(triviaToPrint[i]);
 		}
-		
 
-
-	//for (var i = 0; i < )
 
 		$(".question1a").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[0].options[0]);
 		$(".question1b").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[0].options[1]);
 		$(".question1c").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[0].answer);
 		$(".question1d").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[0].options[2]);
 
-		$(".question2a").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[1].answer);
-		$(".question2b").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[1].options[1]);
-		$(".question2c").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[1].options[0]);
-		$(".question2d").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[1].options[2]);
+		$(".question2a").html('<label><input type="radio" name="question2"></label>' + triviaToPrint[1].answer);
+		$(".question2b").html('<label><input type="radio" name="question2"></label>' + triviaToPrint[1].options[1]);
+		$(".question2c").html('<label><input type="radio" name="question2"></label>' + triviaToPrint[1].options[0]);
+		$(".question2d").html('<label><input type="radio" name="question2"></label>' + triviaToPrint[1].options[2]);
 
-		$(".question3a").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[2].options[1]);
-		$(".question3b").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[2].answer);
-		$(".question3c").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[2].options[0]);
-		$(".question3d").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[2].options[2]);
+		$(".question3a").html('<label><input type="radio" name="question3"></label>' + triviaToPrint[2].options[1]);
+		$(".question3b").html('<label><input type="radio" name="question3"></label>' + triviaToPrint[2].answer);
+		$(".question3c").html('<label><input type="radio" name="question3"></label>' + triviaToPrint[2].options[0]);
+		$(".question3d").html('<label><input type="radio" name="question3"></label>' + triviaToPrint[2].options[2]);
 
-		$(".question4a").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[3].options[2]);
-		$(".question4b").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[3].options[0]);
-		$(".question4c").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[3].options[1]);
-		$(".question4d").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[3].answer);
+		$(".question4a").html('<label><input type="radio" name="question4"></label>' + triviaToPrint[3].options[2]);
+		$(".question4b").html('<label><input type="radio" name="question4"></label>' + triviaToPrint[3].options[0]);
+		$(".question4c").html('<label><input type="radio" name="question4"></label>' + triviaToPrint[3].options[1]);
+		$(".question4d").html('<label><input type="radio" name="question4"></label>' + triviaToPrint[3].answer);
 
-		$(".question5a").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[4].options[2]);
-		$(".question5b").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[4].answer);
-		$(".question5c").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[4].options[1]);
-		$(".question5d").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[4].options[0]);
+		$(".question5a").html('<label><input type="radio" name="question5"></label>' + triviaToPrint[4].options[2]);
+		$(".question5b").html('<label><input type="radio" name="question5"></label>' + triviaToPrint[4].answer);
+		$(".question5c").html('<label><input type="radio" name="question5"></label>' + triviaToPrint[4].options[1]);
+		$(".question5d").html('<label><input type="radio" name="question5"></label>' + triviaToPrint[4].options[0]);
 
+//if ("red").checked = true;
+//}
 
+function reset() {
+	show()
+}
 
 
 
