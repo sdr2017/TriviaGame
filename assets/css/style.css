@@ -1,12 +1,24 @@
 /*font-family: 'Hind Vadodara', sans-serif;
 font-family: 'IM Fell English', serif;*/
+#title {
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
+}
 
 h1 {
 	font-family: 'IM Fell English', serif;
 	letter-spacing: 2px;
 	font-size: 50px;
 	text-align: center;
+	line-height: 100px;
 }
+
+#bird, #fish {
+	margin:auto; 
+	display:block;
+	padding: 10px;
+	}
 
 h3 {
 	margin: 10px 0px 10px 0px;
