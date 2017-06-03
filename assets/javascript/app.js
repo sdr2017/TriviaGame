@@ -28,6 +28,15 @@ $(document).ready(function() {
 		$("#hideButton").hide();
 	}
 
+	function hideResults() {
+		$(".results").hide();
+	}
+	hideResults();
+
+	function showResults() {
+		$(".results").show();
+	}
+
 	var trivia = [{
 			//trivia[0]
 			question: "What do you call a group of Owls?",
@@ -141,6 +150,7 @@ $(document).ready(function() {
      	resultTime--;
      	if (resultTime === 0) {
      		resetGame();
+     		hideResults();
      		show();
      		stop();
      		number = 30;
@@ -150,11 +160,11 @@ $(document).ready(function() {
      function nope() {
      	clearInterval(resultCountdown);
      	}
-     $("#done").on("click", function(){
+     $("#done").on("click", function results(){
      	stop();
      	hide();
-     	alert("show game results here");
-     	nope()
+     	showResults();
+     	nope();
      	resultTime = 5;
      	resultStart();
      	});
@@ -219,18 +229,15 @@ function resetGame() {
 		$(".question5c").html('<label><input type="radio" name="question5"></label>' + triviaToPrint[4].options[1]);
 		$(".question5d").html('<label><input type="radio" name="question5"></label>' + triviaToPrint[4].options[0]);
 
-//if ("red").checked = true;
-//}
-}
-
-
-
-
-
+var checked;
+var correct;
+var wrong;
 
 	
 
 
 
+
+}
 })
 
