@@ -125,36 +125,38 @@ $(document).ready(function() {
     	}
 	//start button:
     $("#start").on("click", function() {
+    	reset();
     	show(); //showing questions on click
     	start(); //starting countdown
     	buttonHide(); //disappearing on click
     	});
 
     
-    var resultTime = 15;
-    var resultCountdown;
-    function resultStart() {
-    	resultCountdown = setInterval(subtract, 1000);
-    	}
-    function subtract() {
-    	resultTime--;
-    	if (resultTime === 0) {
-    		nope();
-    		reset();
-    	}
-    	}
-    function nope() {
-    	clearInterval(resultCountdown);
-    	}
-    $("#done").on("click", function(){
-    	hide();
-    	resultStart();
-    	alert("show game results here");
-    	});
+    var resultTime = 10;
+     var resultCountdown;
+     function resultStart() {
+     	resultCountdown = setInterval(subtract, 1000);
+     	}
+     function subtract() {
+     	resultTime--;
+     	if (resultTime === 0) {
+     		reset();
+     		show();
+     		stop();
+     		start();
+     	}
+     	}
+     function nope() {
+     	clearInterval(resultCountdown);
+     	}
+     $("#done").on("click", function(){
+     	stop();
+     	hide();
+     	alert("show game results here");
+     	resultStart();
+     	});
 
-
-
-
+function reset() {
 	var totalQuestions = $('.question').length; //number of questions in the HTML
 	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
 	//var displayQuestions = ["#1", "#2", "#3", "#4", "#5"];
@@ -189,7 +191,6 @@ $(document).ready(function() {
 	 	$(displayQuestions[i]).html(triviaToPrint[i].question);
 		}
 
-
 		$(".question1a").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[0].options[0]);
 		$(".question1b").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[0].options[1]);
 		$(".question1c").html('<label><input type="radio" name="question1"></label>' + triviaToPrint[0].answer);
@@ -217,10 +218,9 @@ $(document).ready(function() {
 
 //if ("red").checked = true;
 //}
-
-function reset() {
-	show()
 }
+
+
 
 
 
