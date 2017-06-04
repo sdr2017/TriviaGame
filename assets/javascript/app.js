@@ -214,7 +214,10 @@ function resetGame() {
 
 	for (var i = 0; i < displayQuestions.length; i++) {
 		$('.question' + [i]).html(
-		((triviaToPrint[i].options[0] + '<br>') + (triviaToPrint[i].options[1] + '<br>') + (triviaToPrint[i].options[2] + '<br>') + (triviaToPrint[i].options[3]+ '<br>')));
+			(	('<label><input type="radio" name="question' + [i] + '"]></label>' + triviaToPrint[i].options[0] + '<br>') + 
+				('<label><input type="radio" name="question' + [i] + '"]></label>' + triviaToPrint[i].options[1] + '<br>') + 
+				('<label><input type="radio" name="question' + [i] + '"]></label>' + triviaToPrint[i].options[2] + '<br>') + 
+				('<label><input type="radio" name="question' + [i] + '"]></label>' + triviaToPrint[i].options[3]+ '<br>')));
 	}
 
 	
