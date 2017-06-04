@@ -174,7 +174,7 @@ function resetGame() {
 	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
 	//var displayQuestions = ["#1", "#2", "#3", "#4", "#5"];
 	
-	var displayQuestions = ["#1", "#2", "#3", "#4", "#5"];
+	var displayQuestions = ["#1a", "#2a", "#3a", "#4a", "#5a"];
 	// var	displayOptions = [{
 	// 	one: [".question1a", ".question1b", ".question1c", ".question1d"],
 	// 	two: [".question2a", ".question2b", ".question2c", ".question2d"],
@@ -210,8 +210,10 @@ function resetGame() {
 
 		for (var i = 0; i < displayQuestions.length; i++) {
 			triviaToPrint[i].options = shuffle(triviaToPrint[i].options);
-			console.log(triviaToPrint[i].options);
+			$('.question' + [i]).html(triviaToPrint[i].options);
 		}
+
+	
  }
 
 
