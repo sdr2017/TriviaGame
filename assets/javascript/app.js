@@ -210,8 +210,12 @@ function resetGame() {
 
 		for (var i = 0; i < displayQuestions.length; i++) {
 			triviaToPrint[i].options = shuffle(triviaToPrint[i].options);
-			$('.question' + [i]).html(triviaToPrint[i].options);
 		}
+
+	for (var i = 0; i < displayQuestions.length; i++) {
+		$('.question' + [i]).html(
+		((triviaToPrint[i].options[0] + '<br>') + (triviaToPrint[i].options[1] + '<br>') + (triviaToPrint[i].options[2] + '<br>') + (triviaToPrint[i].options[3]+ '<br>')));
+	}
 
 	
  }
