@@ -37,6 +37,10 @@ $(document).ready(function() {
 		$(".results").show();
 	}
 
+	var checked = 0;
+	var correct = 0;
+	var wrong = 0;
+
 	var trivia = [{
 			//trivia[0]
 			question: "What do you call a group of Owls?",
@@ -162,6 +166,7 @@ $(document).ready(function() {
      	}
      $("#done").on("click", function results(){
      	stop();
+     	tally();
      	hide();
      	showResults();
      	nope();
@@ -192,7 +197,7 @@ function resetGame() {
 	for (var i = 0; i <displayQuestions.length; i++) {
 	 	$(displayQuestions[i]).html(triviaToPrint[i].question);
 		}
-
+		//function for shuffling options
 		function shuffle(options) {
 			var index = options.length;
 			var	temporaryValue;
@@ -207,27 +212,47 @@ function resetGame() {
 			}
 			return options;
 		}
-
+		//calling the shuffle function
 		for (var i = 0; i < displayQuestions.length; i++) {
 			triviaToPrint[i].options = shuffle(triviaToPrint[i].options);
 		}
 
 	for (var i = 0; i < displayQuestions.length; i++) {
 		$('.question' + [i]).html(
-			(	('<label><input type="radio" name="question' + [i] + '"]></label>' + triviaToPrint[i].options[0] + '<br>') + 
-				('<label><input type="radio" name="question' + [i] + '"]></label>' + triviaToPrint[i].options[1] + '<br>') + 
-				('<label><input type="radio" name="question' + [i] + '"]></label>' + triviaToPrint[i].options[2] + '<br>') + 
-				('<label><input type="radio" name="question' + [i] + '"]></label>' + triviaToPrint[i].options[3]+ '<br>')));
+			(	('<label><input type="radio" value="' + triviaToPrint[i].options[0] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[0] + '<br>') + 
+				('<label><input type="radio" value="' + triviaToPrint[i].options[1] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[1] + '<br>') + 
+				('<label><input type="radio" value="' + triviaToPrint[i].options[2] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[2] + '<br>') + 
+				('<label><input type="radio" value="' + triviaToPrint[i].options[3] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[3]+ '<br>')));
+	}
 	}
 
-	
- }
+	function tally() {
+		for (var i = 0; i < displayQuestions.length; i++) {
+			$('.question' + i + ' input[type="radio"]:checked'.val()); 
+			
+			if  (answer == triviaToPrint[i].answer) {
+				correct ++;
+			}
+
+			else if ($("input:checked").attr('value') !== triviaToPrint[i].answer) {
+				wrong ++;
+			}
+			else {
+				unanswered ++;
+			}
+			}
+	}
 
 
 	
-var checked;
-var correct;
-var wrong;
+
+	
+
+
+
+	
+ })
+
 
 	
 
@@ -235,5 +260,5 @@ var wrong;
 
 
 
-})
+
 
