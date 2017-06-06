@@ -123,6 +123,9 @@ $(document).ready(function() {
 	//countdown info
 	var number = 30;
     var countdown;
+    var displayQuestions = ["#1a", "#2a", "#3a", "#4a", "#5a"];
+    var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
+
 	function start() {
     	coutdown = setInterval(minus, 1000);
     	}
@@ -176,18 +179,7 @@ $(document).ready(function() {
 
 function resetGame() {
 	var totalQuestions = $('.question').length; //number of questions in the HTML
-	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
-	//var displayQuestions = ["#1", "#2", "#3", "#4", "#5"];
 	
-	var displayQuestions = ["#1a", "#2a", "#3a", "#4a", "#5a"];
-	// var	displayOptions = [{
-	// 	one: [".question1a", ".question1b", ".question1c", ".question1d"],
-	// 	two: [".question2a", ".question2b", ".question2c", ".question2d"],
-	// 	three: [".question3a", ".question3b", ".question3c", ".question3d"],
-	// 	four: [".question4a", ".question4b", ".question4c", ".question4d"],
-	// 	five: [".question5a", ".question5b", ".question5c", ".question5d"],
-	// }]
-
 	for (var i = 0; i < totalQuestions; i++) {
 		var triviaRandom = trivia[Math.floor(Math.random() * trivia.length)];//randomly selecting questions(amount determined in HTML)
 		triviaToPrint.push(triviaRandom);//pushing randomly selected questions to array
@@ -228,9 +220,9 @@ function resetGame() {
 
 	function tally() {
 		for (var i = 0; i < displayQuestions.length; i++) {
-			$('.question' + i + ' input[type="radio"]:checked'.val()); 
+			var value = $('.question' + i + ' input[type="radio"]:checked'.val); 
 			
-			if  (answer == triviaToPrint[i].answer) {
+			if  (value == triviaToPrint[i].answer) {
 				correct ++;
 			}
 
