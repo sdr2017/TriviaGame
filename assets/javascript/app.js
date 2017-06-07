@@ -15,32 +15,20 @@
 //I need to print that information on a new HTML page
 //After XX seconds, I need to go back to the gamepage and reset the game
 $(document).ready(function() {
-
-	function hide() { //for hiding the questions before clicking "start"
-		$("#hideThis").hide();
-	}
-	hide()
-
-	function show() { //for showing the questions after clicking "start"
-		$("#hideThis").show();
-	}
-	function buttonHide() { //for hiding the start button after it's clicked
-		$("#hideButton").hide();
-	}
-
-	function hideResults() {
-		$(".results").hide();
-	}
-	hideResults();
-
-	function showResults() {
-		$(".results").show();
-	}
+	hide();
 
 	var value = [];
 	var unanswered = 0;
 	var correct = 0;
 	var wrong = 0;
+
+	//countdown info
+	var number = 30;
+    var countdown;
+    var displayQuestions = ["#1a", "#2a", "#3a", "#4a", "#5a"];
+    var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
+    var resultTime = 5;
+    var resultCountdown;
 
 	var trivia = [{
 			//trivia[0]
@@ -120,12 +108,28 @@ $(document).ready(function() {
 			asked: false,
 	}];
 
+	function hide() { //for hiding the questions before clicking "start"
+		$("#hideThis").hide();
+	}
 
-	//countdown info
-	var number = 30;
-    var countdown;
-    var displayQuestions = ["#1a", "#2a", "#3a", "#4a", "#5a"];
-    var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
+	function show() { //for showing the questions after clicking "start"
+		$("#hideThis").show();
+	}
+	function buttonHide() { //for hiding the start button after it's clicked
+		$("#hideButton").hide();
+	}
+
+	function hideResults() {
+		$(".results").hide();
+	}
+	hideResults();
+
+	function showResults() {
+		$(".results").show();
+	}
+
+
+	
 
 	function start() {
     	coutdown = setInterval(minus, 1000);
@@ -140,6 +144,7 @@ $(document).ready(function() {
 	function stop() {
     	clearInterval(coutdown);
     	}
+	
 	//start button:
     $("#start").on("click", function() {
     	resetGame();
@@ -148,13 +153,10 @@ $(document).ready(function() {
     	buttonHide(); //disappearing on click
     	});
 
-    
-    	var resultTime = 5;
-     	var resultCountdown;
-     	function resultStart() {
+    function resultStart() {
      	resultCountdown = setInterval(subtract, 1000);
      	}
-     function subtract() {
+    function subtract() {
      	resultTime--;
      	if (resultTime === 0) {
      		resetGame();
@@ -165,17 +167,17 @@ $(document).ready(function() {
      		start();
      	}
      	}
-     function nope() {
+    function nope() {
      	clearInterval(resultCountdown);
      	}
-     $("#done").on("click", function results(){
-     	stop();
-     	tally();
-     	hide();
-     	showResults();
-     	nope();
-     	resultTime = 5;
-     	resultStart();
+    $("#done").on("click", function results(){
+     	stop(); //clear the countdown interval
+     	tally(); //tally the results from the HTML
+     	hide(); //hide the questions in the HTML
+     	showResults(); //show the results page
+     	nope(); //clear interval of resultCountdown
+     	resultTime = 5; //resetting a new result time to countdown
+     	resultStart(); //start subtracting time
      	});
 
 function resetGame() {
