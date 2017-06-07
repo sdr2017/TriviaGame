@@ -139,11 +139,18 @@ $(document).ready(function() {
     	$("#viewNumber").html("<h2>" + number + "</h2>");
     	if (number === 0) {
         stop();
+        tally(); //tally the results from the HTML
+     	hide(); //hide the questions in the HTML
+     	showResults(); //show the results page
+     	nope(); //clear interval of resultCountdown
+     	resultTime = 5; //resetting a new result time to countdown
+     	resultStart(); //start subtracting time
       	}
-    	}
+    	};
+
 	function stop() {
     	clearInterval(coutdown);
-    	}
+    	};
 	
 	//start button:
     $("#start").on("click", function() {
@@ -159,17 +166,17 @@ $(document).ready(function() {
     function subtract() {
      	resultTime--;
      	if (resultTime === 0) {
-     		resetGame();
-     		hideResults();
-     		show();
-     		stop();
-     		number = 30;
-     		start();
+     		resetGame(); //reset the game questions
+     		hideResults(); //hide the results page
+     		show(); //show the questions in the HTML
+     		stop(); //stop the timer for the questions page
+     		number = 30; //reset the timer to 30 seconds
+     		start(); //start the timer
      	}
-     	}
+     	};
     function nope() {
      	clearInterval(resultCountdown);
-     	}
+     	};
     $("#done").on("click", function results(){
      	stop(); //clear the countdown interval
      	tally(); //tally the results from the HTML
