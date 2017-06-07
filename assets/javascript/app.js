@@ -37,7 +37,8 @@ $(document).ready(function() {
 		$(".results").show();
 	}
 
-	var checked = 0;
+	var value = [];
+	var unanswered = 0;
 	var correct = 0;
 	var wrong = 0;
 
@@ -148,9 +149,9 @@ $(document).ready(function() {
     	});
 
     
-    var resultTime = 5;
-     var resultCountdown;
-     function resultStart() {
+    	var resultTime = 5;
+     	var resultCountdown;
+     	function resultStart() {
      	resultCountdown = setInterval(subtract, 1000);
      	}
      function subtract() {
@@ -215,35 +216,31 @@ function resetGame() {
 				('<label><input type="radio" value="' + triviaToPrint[i].options[1] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[1] + '<br>') + 
 				('<label><input type="radio" value="' + triviaToPrint[i].options[2] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[2] + '<br>') + 
 				('<label><input type="radio" value="' + triviaToPrint[i].options[3] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[3]+ '<br>')));
-	}
-	}
+	};
+	};
 
 	function tally() {
 		for (var i = 0; i < displayQuestions.length; i++) {
-			var value = $('.question' + i + ' input[type="radio"]:checked'.val); 
-			
-			if  (value == triviaToPrint[i].answer) {
-				correct ++;
-			}
+			value.push($('input[type="radio"][name="question' + [i] + '"]:checked').val()); 
+			console.log(value);
 
-			else if ($("input:checked").attr('value') !== triviaToPrint[i].answer) {
-				wrong ++;
-			}
-			else {
+			if (value[i] == undefined) {
 				unanswered ++;
+				console.log(unanswered);
+			}
+			
+			else if  (value[i] == triviaToPrint[i].answer) {
+				correct ++;
+				console.log(correct);
+			}
+
+			else if (value[i] !== triviaToPrint[i].answer) {
+				wrong ++;
+				console.log(wrong);
 			}
 			}
-	}
-
-
-	
-
-	
-
-
-
-	
- })
+			}
+})
 
 
 	
