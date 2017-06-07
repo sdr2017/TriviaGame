@@ -17,6 +17,7 @@
 $(document).ready(function() {
 	hide();
 
+	var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
 	var value = [];
 	var unanswered = 0;
 	var correct = 0;
@@ -26,7 +27,6 @@ $(document).ready(function() {
 	var number = 30;
     var countdown;
     var displayQuestions = ["#1a", "#2a", "#3a", "#4a", "#5a"];
-    var triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
     var resultTime = 5;
     var resultCountdown;
 
@@ -189,6 +189,12 @@ $(document).ready(function() {
      	});
 
 function resetGame() {
+	triviaToPrint = []; //pushing questions here equal to the number of questions in HTML
+	value = [];
+	unanswered = 0;
+	correct = 0;
+	wrong = 0;
+	
 	var totalQuestions = $('.question').length; //number of questions in the HTML
 	
 	for (var i = 0; i < totalQuestions; i++) {
@@ -226,8 +232,8 @@ function resetGame() {
 				('<label><input type="radio" value="' + triviaToPrint[i].options[1] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[1] + '<br>') + 
 				('<label><input type="radio" value="' + triviaToPrint[i].options[2] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[2] + '<br>') + 
 				('<label><input type="radio" value="' + triviaToPrint[i].options[3] +  '"name="question' + [i] + '"></label>' + triviaToPrint[i].options[3]+ '<br>')));
-	};
-	};
+	}
+	}
 
 	function tally() {
 		for (var i = 0; i < displayQuestions.length; i++) {
