@@ -177,6 +177,7 @@ $(document).ready(function() {
     function nope() {
      	clearInterval(resultCountdown);
      	};
+
     $("#done").on("click", function results(){
      	stop(); //clear the countdown interval
      	tally(); //tally the results from the HTML
@@ -248,6 +249,9 @@ function resetGame() {
 				console.log(wrong);
 			}
 			}
+		$('#correct').html('Correct: ' + correct);
+		$('#wrong').html('Incorrect: ' + wrong);
+		$('#unanswered').html('Unanswered: ' + unanswered);
 			}
 })
 
