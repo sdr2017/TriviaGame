@@ -262,13 +262,9 @@ function resetGame() {
 			if (correct == displayQuestions.length) {
 				$(".resultImageContainer").html('<img class="resultImage" src="assets/images/five.jpg" alt="Platypus: Well done ole chap!">')
 			}
-			else if (wrong == displayQuestions.length) {
+			else if (correct == 0) {
 				$(".resultImageContainer").html('<img class="resultImage" src="assets/images/zero.jpg" alt="Fish: Poor Sport!">')
 			}
-
-			else if (unanswered == displayQuestions.length) {
-				$(".resultImageContainer").html('<img class="resultImage" src="assets/images/zero.jpg" alt="Fish: Poor Sport!">')
-			} 
 
 			else {
 				$(".resultImageContainer").html('<img class="resultImage" src="assets/images/four.jpg" alt="Lizard: A Gentleman and a Scholar!">')
