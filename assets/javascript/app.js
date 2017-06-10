@@ -184,7 +184,7 @@ $(document).ready(function() {
      	hide(); //hide the questions in the HTML
      	showResults(); //show the results page
      	nope(); //clear interval of resultCountdown
-     	resultTime = 5; //resetting a new result time to countdown
+     	resultTime = 8; //resetting a new result time to countdown
      	resultStart(); //start subtracting time
      	});
 
@@ -258,7 +258,22 @@ function resetGame() {
 		$('#correct').html('Correct: ' + correct);
 		$('#wrong').html('Incorrect: ' + wrong);
 		$('#unanswered').html('Unanswered: ' + unanswered);
+
+			if (correct == displayQuestions.length) {
+				$(".resultImageContainer").html('<img class="resultImage" src="assets/images/five.jpg" alt="Platypus: Well done ole chap!">')
 			}
+			else if (wrong == displayQuestions.length) {
+				$(".resultImageContainer").html('<img class="resultImage" src="assets/images/zero.jpg" alt="Fish: Poor Sport!">')
+			}
+
+			else if (unanswered == displayQuestions.length) {
+				$(".resultImageContainer").html('<img class="resultImage" src="assets/images/zero.jpg" alt="Fish: Poor Sport!">')
+			} 
+
+			else {
+				$(".resultImageContainer").html('<img class="resultImage" src="assets/images/four.jpg" alt="Lizard: A Gentleman and a Scholar!">')
+			}
+		}
 })
 
 

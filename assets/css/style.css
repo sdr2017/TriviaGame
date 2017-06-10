@@ -46,4 +46,8 @@ h3 {
 	text-align: center;
 	line-height: 0px;
 }
+
+.resultImage {
+	margin:auto;
+	display:block;
 }
