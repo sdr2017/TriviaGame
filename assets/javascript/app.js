@@ -275,9 +275,3 @@ function resetGame() {
 
 	
 
-
-
-
-
-
-

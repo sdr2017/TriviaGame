@@ -1,135 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Animal Trivia</title>
-  <meta charset="UTF-8">
-	<!--Bootstrap and media queries-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<head>
+	  <title>Animal Trivia</title>
+	  	<meta charset="UTF-8">
+		<!--Bootstrap and media queries-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara|IM+Fell+English:400i" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara|IM+Fell+English:400i" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-  <!-- Linking to JQuery -->
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="assets/javascript/app.js"></script>
+	  	<!-- Linking to JQuery -->
+	  	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	  	<script src="assets/javascript/app.js"></script>
+	</head>
 
+	<body>
 
-</head>
+		<div class="container">
 
-<body>
+			<div id="title" class="row">
+				
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<img id="fish" src="assets/images/fish.jpg" alt="fish">
+				</div>
 
-	<div class="container">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<h1 id="title">Animal Trivia</h1>
+				</div>
 
-		<div id="title" class="row">
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-				<img id="fish" src="assets/images/fish.jpg" alt="fish">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<img id="bird" src="assets/images/bird.jpg" alt="bird">
+				</div>
+
 			</div>
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<h1 id="title">Animal Trivia</h1>
-			</div>
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-				<img id="bird" src="assets/images/bird.jpg" alt="bird">
-			</div>
-		</div>
 
 
-		<!--Start Button, will disappear after clicked-->
-		<div class="row" id="hideButton">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<button type="button" class="btn btn-secondary" id="start"></button>
-			</div>
-		</div>
+			<!--Start Button, will disappear after clicked-->
+			<div class="row" id="hideButton">
 
-	
-	<div id="hideThis">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<button type="button" class="btn btn-secondary" id="start"></button>
+				</div>
+
+			</div>
+
 		
-		<!--where the countdown is displayed-->
-		<div id="viewNumber">
-		<h2>30</h2>		
-		</div>
+			<div id="hideThis">
+				
+				<!--where the countdown is displayed-->
+				<div id="viewNumber">
+					<h2>30</h2>		
+				</div>
 
-		<!--Questions to be Asked, hidden before starting the game-->
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<!--Questions to be Asked, hidden before starting the game-->
+				<div class="row">
 
-				<h3 class="question" id="1a">Question Here</h3>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-				<div class="radio question0">	
-   				 </div>
+						<h3 class="question" id="1a">Question Here</h3>
+
+						<div class="radio question0">	
+		   				 </div>
+
+					</div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<h3 class="question" id="2a">Question Here</h3>
+
+						<div class="radio question1">
+		   				</div>
+
+					</div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<h3 class="question" id="3a">Question Here</h3>
+
+						<div class="radio question2">
+		   				</div>
+
+					</div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<h3 class="question" id="4a">Question Here</h3>
+
+						<div class="radio question3">
+		   				</div>
+
+					</div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<h3 class="question" id="5a">Question Here</h3>
+
+						<div class="radio question4">
+		   				</div>
+		   				 
+					</div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<button type="button" class="btn btn-secondary" id="done">DONE</button>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row results">
+
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<h4 id="correct">Correct: </h4>
+				</div>
+
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<h4 id="wrong">Incorrect: </h4>
+				</div>
+
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<h4 id="unanswered">Unanswered: </h4>
+				</div>
 
 			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="row results">
 
-				<h3 class="question" id="2a">Question Here</h3>
-
-				<div class="radio question1">
-   				</div>
-
+				<div class="resultImageContainer col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				</div>
+			
 			</div>
-		</div>
+		</div>	
 
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-				<h3 class="question" id="3a">Question Here</h3>
-
-				<div class="radio question2">
-   				</div>
-
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-				<h3 class="question" id="4a">Question Here</h3>
-
-				<div class="radio question3">
-   				</div>
-
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-				<h3 class="question" id="5a">Question Here</h3>
-
-				<div class="radio question4">
-   				</div>
-   				 
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<button type="button" class="btn btn-secondary" id="done">DONE</button>
-			</div>
-		</div>
-	</div>
-
-	<div class="row results">
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<h4 id="correct">Correct: </h4>
-		</div>
-
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<h4 id="wrong">Incorrect: </h4>
-		</div>
-
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<h4 id="unanswered">Unanswered: </h4>
-		</div>
-	</div>
-	<div class="row results">
-		<div class="resultImageContainer col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		</div>
-	
-	</div>	
-
-</body>
+	</body>
+</html>
