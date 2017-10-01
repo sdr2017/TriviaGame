@@ -1,4 +1,4 @@
-# TriviaGame
+# Animal Trivia
 
 ![homepage](assets/images/desktop2.jpg)
 
@@ -8,6 +8,8 @@ This is a simple trivia game about animals. The user is presented with 5 random 
 
 ## Technologies Used
 The app is built with HTML, CSS, Bootstrap for layout, and JavaScript for functionality.
+
+---
 
 To view the app, click here:
 https://sdr2017.github.io/TriviaGame/
