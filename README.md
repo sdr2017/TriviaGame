@@ -7,7 +7,7 @@ This is a simple trivia game about animals. The user is presented with 5 random 
 ![trivia](assets/images/desktop1.jpg)
 
 ## Technologies Used
-The app is built with HTML, CSS, Bootstrap for layout, and JavaScript for functionality.
+The app is built with HTML, CSS, Bootstrap for layout, and JavaScript and jQuery for functionality.
 
 ---
 
